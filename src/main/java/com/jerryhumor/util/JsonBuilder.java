@@ -2,6 +2,7 @@ package com.jerryhumor.util;
 
 import com.jerryhumor.news.model.Article;
 import com.jerryhumor.news.model.News;
+import com.jerryhumor.user.model.User;
 import com.jfinal.plugin.activerecord.Page;
 
 import java.util.List;
@@ -77,6 +78,22 @@ public class JsonBuilder {
     public static String generateArticleJson(Article article){
         //todo 生成新闻文章json数据
         String json = null;
+        return json;
+    }
+
+    /**
+     * 登录或者注册成功之后返回给用户的信息
+     * @param user
+     * @return
+     */
+    public static String generateUserJson(User user){
+        String json =
+                "{" +
+                "\"status\":\"ok\"," +
+                "\"user_name\":\"" + user.getName() + "\"," +
+                "\"unique_id\":\"" + user.getUniqueId() + "\"" +
+                "}";
+
         return json;
     }
 

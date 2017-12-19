@@ -4,7 +4,6 @@ import com.jerryhumor.classifier.ArticleClassifier;
 import com.jerryhumor.news.constant.NewsSource;
 import com.jerryhumor.news.model.Article;
 import com.jerryhumor.news.model.News;
-import com.jerryhumor.segment.CoreNLPSegment;
 import com.jerryhumor.spider.constant.SpiderConstant;
 import com.jerryhumor.util.TimeUtil;
 import org.jsoup.Jsoup;
