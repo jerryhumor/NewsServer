@@ -9,7 +9,7 @@ import java.util.List;
 
 public class UserController extends Controller{
 
-    private static String DEFALUT_FAVOUR = "1-1-1-1-1-1-1-1-1-1";
+    private static String DEFAULT_FAVOUR = "1-1-1-1-1-1-1-1-1-1";
 
     public void login(){
         boolean isParamCorrect = true;
@@ -26,7 +26,7 @@ public class UserController extends Controller{
             System.out.println("登录失败");
             renderJson(generateErrorJson("参数错误"));
         }else{
-            List<User> userList = User.dao.find("select * from user where account = " + account);
+            List<User> userList = User.dao.find("select * from user where account = '" + account + "'");
             if (userList != null && userList.size() > 0){
                 user = userList.get(0);
                if (password.equals(user.getPassword())){
@@ -53,7 +53,7 @@ public class UserController extends Controller{
             System.out.println("注册失败");
             renderJson(generateErrorJson("参数错误"));
         }else{
-            List<User> userList = User.dao.find("select * from user where account = " + account);
+            List<User> userList = User.dao.find("select * from user where account = '" + account + "'");
             if (userList != null && userList.size() > 0){
                 renderJson(generateErrorJson("账户已存在"));
             }else{
@@ -62,7 +62,7 @@ public class UserController extends Controller{
                         .setPassword(password)
                         .setName(userName)
                         .setUniqueId(generateUniqueId())
-                        .setFavour(DEFALUT_FAVOUR)
+                        .setFavour(DEFAULT_FAVOUR)
                         .setCreateTime(new Date());
                 user.save();
                 renderJson(JsonBuilder.generateUserJson(user));
