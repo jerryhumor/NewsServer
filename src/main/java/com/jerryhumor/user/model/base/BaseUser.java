@@ -72,4 +72,13 @@ public abstract class BaseUser<M extends BaseUser<M>> extends Model<M> implement
 		return getStr("favour");
 	}
 
+	public M setMostFavour(java.lang.Integer mostFavour) {
+		set("most_favour", mostFavour);
+		return (M)this;
+	}
+
+	public java.lang.Integer getMostFavour() {
+		return getInt("most_favour");
+	}
+
 }

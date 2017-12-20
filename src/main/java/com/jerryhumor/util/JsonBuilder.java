@@ -90,6 +90,7 @@ public class JsonBuilder {
         String json =
                 "{" +
                 "\"status\":\"ok\"," +
+                "\"account\":\"" + user.getAccount() + "\"," +
                 "\"user_name\":\"" + user.getName() + "\"," +
                 "\"unique_id\":\"" + user.getUniqueId() + "\"" +
                 "}";

@@ -13,7 +13,6 @@ public class UserController extends Controller{
 
     public void login(){
         boolean isParamCorrect = true;
-        boolean isAccountCorrect = false;
         User user = null;
         String account = getPara(0);
         String password = getPara(1);

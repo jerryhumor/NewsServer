@@ -3,12 +3,14 @@ package com.jerryhumor.news.controller;
 import com.jerryhumor.news.constant.NewsType;
 import com.jerryhumor.news.model.Article;
 import com.jerryhumor.news.model.News;
+import com.jerryhumor.push.PushUtil;
 import com.jerryhumor.util.JsonBuilder;
 import com.jerryhumor.util.TimeUtil;
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Page;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class NewsController extends Controller {
 
@@ -58,9 +60,20 @@ public class NewsController extends Controller {
         renderText(JsonBuilder.generateArticleJson(article));
     }
 
+    public void push(){
+        List<News> newsList = News.dao.find("select * from news where category = 1");
+        if (newsList == null || newsList.size() == 0){
+            System.out.println("没有1类型的新闻");
+        }else{
+            PushUtil.pushNewsInfo(newsList.get(0));
+        }
+        renderText("完成操作");
+    }
+
     private String generateErrorJson(String error){
         return "{\"status\":\"failed\", \"error\":\"" + error + "\"}";
     }
+
 
 
 
