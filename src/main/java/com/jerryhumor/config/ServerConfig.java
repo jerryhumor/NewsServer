@@ -47,11 +47,11 @@ public class ServerConfig extends JFinalConfig {
     public void afterJFinalStart() {
         super.afterJFinalStart();
 
-        //初始化分词器
-        CoreNLPSegment.init();
-        //初始化分类器
-        ArticleClassifier.init();
-        //启动网易爬虫
-        NeteaseSpider.start();
+//        //初始化分词器
+//        CoreNLPSegment.init();
+//        //初始化分类器
+//        ArticleClassifier.init();
+//        //启动网易爬虫
+//        NeteaseSpider.start();
     }
 }

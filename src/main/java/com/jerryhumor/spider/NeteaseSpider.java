@@ -57,9 +57,9 @@ public class NeteaseSpider {
             Element articleElement = document.getElementById(articleId);
             Elements headElements = articleElement.getElementsByClass("head");
             Elements contentElements = articleElement.getElementsByClass("content");
-            final String title = getArticleTitle(headElements.get(0));
+            final String title = getArticleTitle(headElements.get(0)).replace("\"", "\\\"");
             final Date date = getArticleTime(headElements.get(0));
-            final String article = generateArticleBody(headElements.get(0), contentElements.get(0));
+            final String article = generateArticleBody(headElements.get(0), contentElements.get(0)).replace("\"", "\\\"");
             final String image = getFirstImage(contentElements.get(0));
             final int category = getArticleCategory(contentElements.get(0));
             saveNews(title, NewsSource.CODE_NETEASE, category, image, date, newsId, article);

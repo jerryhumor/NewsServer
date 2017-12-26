@@ -64,7 +64,7 @@ public class JsonBuilder {
                    "\"img\":\"" + news.getImg() + "\"," +
                    "\"news_time\":" + news.getNewsTime().getTime() / 1000 + "," +
                    "\"create_time\":" + news.getCreateTime().getTime() / 1000 + "," +
-                   "\"news_id\":\"" + news.getNewsId() + "\"" +
+                   "\"news_id\":\"" + news.getId() + "\"" +
                    "}";
         }
         return json;
@@ -76,8 +76,11 @@ public class JsonBuilder {
      * @return
      */
     public static String generateArticleJson(Article article){
-        //todo 生成新闻文章json数据
-        String json = null;
+        String json =
+                "{" +
+                "\"status\":\"ok\"," +
+                "\"content\":\"" + article.getContent() + "\"" +
+                "}";
         return json;
     }
 

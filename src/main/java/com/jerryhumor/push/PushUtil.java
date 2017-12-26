@@ -24,6 +24,7 @@ public class PushUtil {
      * @param news
      */
     public static void pushNewsInfo(News news){
+        System.out.println("开始推送新闻，新闻类型：" + news.getCategory());
         List<Target> targets = generateTargetList(news.getCategory());
         TransmissionTemplate template = generateTemplate(news);
         pushNewsInfo(targets, template);
@@ -76,7 +77,9 @@ public class PushUtil {
      */
     private static List<String> getAccountListBy(int mostLikeType){
         System.out.println("获取用户账号列表，新闻类型：" + mostLikeType);
-        List<User> userList = User.dao.find("select * from user where most_favour = " + mostLikeType);
+        String sql = "select * from user where most_favour = " + mostLikeType;
+        System.out.println("查询语句：" + sql);
+        List<User> userList = User.dao.find(sql);
         List<String> accountList = null;
         if (userList == null || userList.size() == 0){
             System.out.println("获取用户账号列表，该类型用户不存在");
@@ -96,12 +99,13 @@ public class PushUtil {
      * @return
      */
     private static TransmissionTemplate generateTemplate(String jsonInfo){
+        System.out.println("生成透传模板，json数据：" + jsonInfo);
         TransmissionTemplate template = new TransmissionTemplate();
         template.setAppId(appId);
         template.setAppkey(appKey);
         // 透传消息设置，1为强制启动应用，客户端接收到消息后就会立即启动应用；2为等待应用启动
         template.setTransmissionType(2);
-        template.setTransmissionContent("请输入需要透传的内容");
+        template.setTransmissionContent(jsonInfo);
         return template;
     }
 
