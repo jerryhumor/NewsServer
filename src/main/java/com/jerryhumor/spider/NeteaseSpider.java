@@ -25,7 +25,7 @@ public class NeteaseSpider {
 
     public static void start(){
         Timer spiderTimer = new Timer();
-        spiderTimer.schedule(new NeteaseSpiderTask(), SpiderConstant.NETEAST_PERIOD, SpiderConstant.NETEAST_PERIOD);
+        spiderTimer.schedule(new SpiderTask(), SpiderConstant.PERIOD, SpiderConstant.PERIOD);
     }
 
     public void startGather(){

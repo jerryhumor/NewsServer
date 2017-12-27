@@ -63,3 +63,15 @@ java.lang.IllegalStateException: port: 8080 already in use!
 	at com.jfinal.core.JFinal.main(JFinal.java:201)
 2017-12-25 15:55:54 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
 2017-12-25 16:05:24 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
+2017-12-27 13:50:25 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
+2017-12-27 15:47:07 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
+2017-12-27 15:52:03 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
+2017-12-27 15:59:44 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
+2017-12-27 16:08:28 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
+2017-12-27 16:08:55 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
+2017-12-27 16:11:06 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
+2017-12-27 16:24:03 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
+2017-12-27 16:33:06 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
+2017-12-27 16:47:50 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
+2017-12-27 16:53:39 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited
+2017-12-27 17:09:20 [INFO]-[com.alibaba.druid.pool.DruidDataSource] {dataSource-1} inited

@@ -4,6 +4,7 @@ import com.jerryhumor.classifier.ArticleClassifier;
 import com.jerryhumor.news.controller.NewsController;
 import com.jerryhumor.segment.CoreNLPSegment;
 import com.jerryhumor.spider.NeteaseSpider;
+import com.jerryhumor.spider.Spider;
 import com.jerryhumor.user.controller.UserController;
 import com.jerryhumor.util.MappingKit;
 import com.jfinal.config.*;
@@ -47,11 +48,11 @@ public class ServerConfig extends JFinalConfig {
     public void afterJFinalStart() {
         super.afterJFinalStart();
 
-//        //初始化分词器
-//        CoreNLPSegment.init();
-//        //初始化分类器
-//        ArticleClassifier.init();
-//        //启动网易爬虫
-//        NeteaseSpider.start();
+        //初始化分词器
+        CoreNLPSegment.init();
+        //初始化分类器
+        ArticleClassifier.init();
+        //爬虫
+        Spider.start();
     }
 }

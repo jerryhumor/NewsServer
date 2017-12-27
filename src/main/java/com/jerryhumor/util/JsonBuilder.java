@@ -64,7 +64,7 @@ public class JsonBuilder {
                    "\"img\":\"" + news.getImg() + "\"," +
                    "\"news_time\":" + news.getNewsTime().getTime() / 1000 + "," +
                    "\"create_time\":" + news.getCreateTime().getTime() / 1000 + "," +
-                   "\"news_id\":\"" + news.getId() + "\"" +
+                   "\"news_id\":\"" + news.getFkArticleId() + "\"" +
                    "}";
         }
         return json;
