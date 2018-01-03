@@ -44,7 +44,7 @@ public class UserController extends Controller{
         String account = getPara(0);
         String password = getPara(1);
         String userName = getPara(2);
-        System.out.println("login, account: " + account + " password: " + password + " user name: " + userName);
+        System.out.println("register, account: " + account + " password: " + password + " user name: " + userName);
         if (account == null || password == null || userName == null){
             isParamCorrect = false;
         }

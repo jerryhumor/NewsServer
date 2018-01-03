@@ -9,17 +9,17 @@ public class SpiderTask extends TimerTask {
     public void run() {
         switch (++count){
             case 1:
-                startZhihuCollector();
+                startNeteaseSpider();
                 break;
             case 2:
-                startZhihuCollector();
+                startSinaSpider();
                 break;
             case 3:
                 startZhihuCollector();
                 break;
             case 4:
-                count = 0;
-                startZhihuCollector();
+                count = 1;
+                startNeteaseSpider();
             default:
                 count = 0;
                 break;
